@@ -1,0 +1,1 @@
+web: gunicorn waterqualityexplorer.wsgi --log-file -

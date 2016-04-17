@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="jumbotron text-center">
+  <div class="container-fluid" id=title>
+    <h1> Water Quality Sample Explorer</h1>
+    <p> Explore the water sample quaility test results from the USGS and US EPA. </p>
+  </div>
+</div>
+<div class="container-fluid" id=introduction>
+    <h3> Introduction </h3>
+    <p> Intro text here </p>
+<br>
+    <p> More here </p>
+</div>    
+
+<div class="container-fluid" id=datasources>
+    <h3> Data Sources </h3>
+    <h4> USGS NWIS </h4>
+    <p> USGS NWIS info here
+    </p>
+    <br>
+    <h4>  EPA STORET </h4>
+    <p> EPA STORET info here
+    </p>
+</div>    
+
+<div class="container-fluid" id=exploratoryanalysis>
+    <h3> Exploratory Analysis </h3>
+    <p> text here
+    </p>
+</div>    
+
+<div class="container-fluid" id=glyphosphateapplicatoinandwaterquality>
+    <a href="/static/GlyphosphateApplicationAndWaterQuality.png">
+    <img src="{% static 'GlyphosphateApplicationAndWaterQuality.png'%}" class="img-responsive">
+    </a>
+</div>
+<div class="container-fluid">
+    <p>While there is much noise in the application data, it is clear that the overall trend is in an upwards direction, visible in the peaks of the data. The dips between peaks are most likely due to the different sampling methods, and more analysis is needed to estimate the actual application usage based on the data collected. In particular, the very low drop between the two large peaks in 2007 and 2012 is likely an artifact of less data being collected during those years between censuses. Surprisingly, while the trend in glyphosate application is clearly increasing, the water samples show the opposite trend. 
+    </p>
+    <p>The opposing trends in glyphosate application and runoff shown above led to the question: is there a time progression in popularity of different chemical forms of glyphosate that may account for the decrease in runoff, even as the amount of the chemical used increased? The bar chart below shows that, indeed, is the case. 
+    </p>
+    <p>The chart shows the amount of glyphosate application in each year, with a different colored bar for each chemical form. Note that if all chemical forms were applied in appreciable amounts in each year, then each year would show four different bars. What we see instead is that glyphosate was applied only in its molecular form (black) up until 2004, after which glyphosate isopropylamine salt became the dominant form (olive), with a recent appearance of glyphosate potassium salt (white). Glyphosate ammonium salt usage is too small to appear. 
+    </p>
+</div>    
+<div class="container-fluid" id=glyphosatebychemicalform>
+    <a href="/static/GlyphosateByChemicalForm.png">
+    <img src="{% static 'GlyphosateByChemicalForm.png'%}" class="img-responsive">
+    </a>
+<div class="container-fluid">
+    <p> In 2005, the chemical form of glyphosate applied changes from the molecular form to salt forms. The year of this change corresponds to the drop in concentration of the contaminant measured in water samples seen in the first plot. It is possible that the water quality testing methods are not capturing the ionic form of glyphosate, or that the ionic form is more mobile in water and thus does not persist in the local environment. The goal of this project is not to directly make this kind of discovery, but to provide an interface where interested citizens can see a comprehensive picture of the agricultural inputs in their county or state and the relevant water quality impacts of those inputs, enabling members of the public make their own discoveries.
+    </p>
+    <p> This exploratory analysis does not come close to being complete. What is presented here serves only to show the type of data available from NASS and NAWQA, how the two data sets relate, and what a user may find in exploring the data when presented in an accessible form. Furthermore, it shows where data is lacking or may be incomplete, highlighting the need for developing algorithms to identify these weak points and interpolate estimated values.
+    </p>
+</div>
+</div>
+<div class="container-fluid" id="references">
+    <h3> References </h3>
+    <p> [1] Greene, Catherine, <a href="http://www.ers.usda.gov/amber-waves/2013-october/growth-patterns-in-the-us-organic-industry.aspx#.VjUxvq6rTUo">"Growth Patterns in the U.S. Organic Industry"</a>, Amber Waves, USDA Economic Research Service, October, 23, 2013.<p/>
+    <p> [2] Organic Trade Association, <a href="https://ota.com/news/press-releases/18061">U.S. consumers across the country devour record amount of organic in 2014</a>, April, 15, 2015.
+    <p> [3] United States Department of Agriculture, National Agricultural Statistics Service, <a href="http://www.nass.usda.gov/Statistics_by_Subject/Environmental/">Environment Data</a>.</p>
+    <p> [4] Thelin, Gail P. and Stone, Wesley W., <a href="http://pubs.usgs.gov/sir/2013/5009/">Estimation of Annual Agricultural Pesticide Use for Counties of the Conterminous United States, 1992–2009</a>, U.S. Geological Survey Scientific Investigations Report 2013-5009.</p>
+    <p> [5] Ruddy, B.C., Lorenz, D.L., and Mueller, D.K., <a href="http://pubs.usgs.gov/sir/2006/5012/">County-Level Estimates of Nutrient Inputs to the Land Surface of the Conterminous United States, 1982–2001</a>, U.S. Geological Survey Scientific Investigations Report 2006-5012</p>
+    <p> [6] International Plant Nutrition Institute, <a href="http://nugis.ipni.net/Home/About%20NuGIS/">Nutrient Use Geographic Information System</a>.</p>
+</div>
+
+{% endblock %}
